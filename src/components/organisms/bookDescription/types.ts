@@ -5,6 +5,6 @@ export type TBookDescription = DetailedHTMLProps<
     HTMLDivElement
 > & {
     title: string;
-    author: string;
+    authors: Array<string>;
     description: string;
 };

@@ -1,7 +1,11 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { genre, sortBy } from '../../../constants.ts/searchParams';
+import {
+    DEFAULT_SEACRH_STRING,
+    genre,
+    sortBy,
+} from '../../../constants.ts/searchParams';
 import {
     getCategoryState,
     getGenreState,
@@ -32,9 +36,7 @@ export const SearchBar = () => {
         handleSubmit,
         setError,
         formState: { errors },
-    } = useForm<TFields>({
-        mode: 'onBlur',
-    });
+    } = useForm<TFields>({ mode: 'onBlur' });
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -57,8 +59,11 @@ export const SearchBar = () => {
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
             <InputBox>
-                <Input {...register('search', { required: true })} />
-                <SubmitButton type="submit">🔍</SubmitButton>
+                <Input
+                    {...register('search', { required: true })}
+                    placeholder={DEFAULT_SEACRH_STRING}
+                />
+                <SubmitButton type="submit" />
             </InputBox>
 
             <SelectBox>

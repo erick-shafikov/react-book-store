@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import loop from '../../../../public/loop.svg';
+
 export const Form = styled.form`
     display: flex;
     justify-content: center;
@@ -21,12 +23,22 @@ export const Input = styled.input`
     margin: 5px 0;
     height: 30px;
     font-size: 20px;
+    text-align: center;
+
+    &::placeholder {
+        color: 	#D3D3D3;
+    }
 `;
 
 export const SubmitButton = styled.button.attrs({ type: 'submit' })`
-    max-width: 20px;
-    height: 30px;
+    max-width: 30px;
+    height: 32px;
     margin: 0;
+    border: 1px solid $fff;
+    background: center no-repeat url(${loop});
+    background-color: #fff;
+    border-style: none;
+    background-size: 80%;
 `;
 
 export const StyledSelect = styled.select`
@@ -35,7 +47,7 @@ export const StyledSelect = styled.select`
 
 export const SelectContainer = styled.div`
     max-width: 500px;
-    margin: 5px;
+    margin: 30px;
     display: flex;
 `;
 
@@ -49,9 +61,7 @@ export const TextBox = styled.div`
 
 export const SelectBox = styled.div`
     display: flex;
-    margin: 0 auto;
     justify-content: center;
-    margin: 20px 0;
     align-content: space-between;
     flex-wrap: wrap;
 `;

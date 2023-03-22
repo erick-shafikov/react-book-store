@@ -8,6 +8,8 @@ export const genre = [
     'poetry',
 ] as const;
 
-export const sortBy = ['newest', 'relevance'] as const;
+export const sortBy = ['relevance', 'newest'] as const;
 
 export const BOOK_CNT = 30;
+
+export const DEFAULT_SEACRH_STRING = 'react';

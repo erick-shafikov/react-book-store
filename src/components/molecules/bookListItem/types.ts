@@ -6,7 +6,7 @@ export type TBookListItemProps = DetailedHTMLProps<
 > & {
     boookTitle: string;
     category: string;
-    author: string;
+    authors: Array<string>;
     imageSrc: string;
     id: string;
 };

@@ -8,6 +8,10 @@ export const BookListItemWrapper = styled.div`
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     border-radius: 3px;
+
+    &:hover {
+        background-color: #e8e8e8;
+    }
 `;
 
 export const StyledCategory = styled.div`
@@ -16,10 +20,12 @@ export const StyledCategory = styled.div`
 `;
 
 export const BookTitle = styled.h3`
+    width: 90%;
     text-align: center;
     margin: 5px;
+    word-wrap: wrap;
 `;
 
-export const AuthorName = styled.span`
-    color: #e8e8e8;
+export const AuthorName = styled.div`
+    color: #707070;
 `;

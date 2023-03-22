@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 export const BookListItem = ({
     boookTitle,
     category,
-    author,
+    authors,
     imageSrc,
     id,
 }: TBookListItemProps) => {
@@ -26,7 +26,10 @@ export const BookListItem = ({
             <BookImage src={imageSrc} />
             <StyledCategory>{category}</StyledCategory>
             <BookTitle>{boookTitle}</BookTitle>
-            <AuthorName>{author}</AuthorName>
+            {authors &&
+                authors.map((author) => (
+                    <AuthorName key={author}>{author}</AuthorName>
+                ))}
         </BookListItemWrapper>
     );
 };

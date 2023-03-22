@@ -1,7 +1,7 @@
 import React from 'react';
-import { Styled } from './styled';
+import { Button } from './styled';
 import { TLoadMoreButton } from './types';
 
-// export const LoadMoreButton = (props: TLoadMoreButton) => {
-//     return <Styled {...props}>Load More</Styled>;
-// };
+export const LoadMoreButton = ({ onClick }: TLoadMoreButton) => {
+    return <Button onClick={onClick}>click to load More 🕮</Button>;
+};

@@ -1,7 +1,8 @@
-// import { LoadMoreButton } from '../../atoms/loadMoreButton';
 import { loadMore, useAppDispatch } from '../../../store';
+import { LoaderLine } from '../../atoms/loader/styled';
+import { LoadMoreButton } from '../../atoms/loadMoreButton';
 import { BookListItem } from '../../molecules/bookListItem';
-import { GridList } from './styled';
+import { FoundResults, GridList } from './styled';
 import { BookListProps } from './types';
 
 export const BookList = ({ books, isLoaded, totalItems }: BookListProps) => {
@@ -12,23 +13,25 @@ export const BookList = ({ books, isLoaded, totalItems }: BookListProps) => {
 
     return (
         <>
-            {!isLoaded && <>Loading...</>}
-            {isLoaded && <>found{totalItems}results</>}
+            {isLoaded ? (
+                <FoundResults>found {totalItems} results</FoundResults>
+            ) : (
+                <LoaderLine />
+            )}
             <GridList>
                 {Object.values(books).map((item) => (
                     <BookListItem
                         boookTitle={item?.volumeInfo.title}
                         key={item?.id}
-                        category={item?.volumeInfo.authors?.[0]}
-                        author={item?.volumeInfo.categories?.[0]}
+                        category={item?.volumeInfo.categories?.[0]}
+                        authors={item?.volumeInfo?.authors}
                         imageSrc={item?.volumeInfo.imageLinks?.thumbnail}
                         id={item?.id}
                     />
                 ))}
             </GridList>
-            {!isLoaded && <>Loading...</>}
             {isLoaded && !(Object.values(books).length >= totalItems) && (
-                <button onClick={onClickHandler}>Load More</button>
+                <LoadMoreButton onClick={onClickHandler} />
             )}
         </>
     );

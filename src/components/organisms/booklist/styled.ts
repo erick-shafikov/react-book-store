@@ -5,7 +5,13 @@ export const GridList = styled.div`
     box-sizing: border-box;
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     align-content: space-between;
     justify-items: center;
+`;
+
+export const FoundResults = styled.div`
+    text-align: center;
+    margin: 10px 0;
+    color: #787878;
 `;

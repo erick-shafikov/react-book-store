@@ -1,18 +1,22 @@
-import React from 'react';
-import { BookDetails } from './styled';
+import { Button } from '../../atoms/button';
+import { Author, BookDetails, Title } from './styled';
 import { TBookDescription } from './types';
 
 export const BookDescription = ({
     title,
-    author,
+    authors,
     description,
 }: TBookDescription) => {
-    const html = { __html: description };
     return (
         <BookDetails>
-            <h2>{title}</h2>
-            <div>{author}</div>
-            <div dangerouslySetInnerHTML={{ __html: description }}></div>
+            <Title>{title}</Title>
+            {authors &&
+                authors.map((author) => <Author key={author}>{author}</Author>)}
+            <div
+                dangerouslySetInnerHTML={{ __html: description }}
+                style={{ textAlign: 'center' }}
+            ></div>
+            <Button path="/">Home ⬅</Button>
         </BookDetails>
     );
 };

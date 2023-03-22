@@ -1,6 +1,6 @@
-export type TLoadMoreButton = React.DetailedHTMLProps<
+export type TButtonProps = React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
 > & {
-    onClick: () => void;
+    path: string;
 };

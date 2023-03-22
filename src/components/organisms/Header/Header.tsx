@@ -5,7 +5,7 @@ import { Styled } from './styled';
 export const Header = () => {
     return (
         <Styled>
-            <HeaderTitle headerText="Search for books" id="fuck" />
+            <HeaderTitle headerText="Search for books" />
             <SearchBar />
         </Styled>
     );

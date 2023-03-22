@@ -7,4 +7,5 @@ export type TBookImageProps = DetailedHTMLProps<
     width?: string;
     height?: string;
     src?: string;
+    loading: boolean;
 };
