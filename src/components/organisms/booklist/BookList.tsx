@@ -1,36 +1,35 @@
-import React from 'react';
+// import { LoadMoreButton } from '../../atoms/loadMoreButton';
+import { loadMore, useAppDispatch } from '../../../store';
 import { BookListItem } from '../../molecules/bookListItem';
 import { GridList } from './styled';
+import { BookListProps } from './types';
 
-const tempBooklist = [
-    'book1',
-    'book2',
-    'book3',
-    'book4',
-    'book5',
-    'book6',
-    'book7',
-    'book8',
-    'book9',
-    'book10',
-    'book11',
-    'book12',
-];
+export const BookList = ({ books, isLoaded, totalItems }: BookListProps) => {
+    const dispatch = useAppDispatch();
+    const onClickHandler = () => {
+        dispatch(loadMore());
+    };
 
-export const BookList = () => {
     return (
         <>
-            found{tempBooklist.length}results
+            {!isLoaded && <>Loading...</>}
+            {isLoaded && <>found{totalItems}results</>}
             <GridList>
-                {tempBooklist.map((item) => (
+                {Object.values(books).map((item) => (
                     <BookListItem
-                        boookTitle={item}
-                        key={item}
-                        category={'computers'}
-                        author={'author'}
+                        boookTitle={item?.volumeInfo.title}
+                        key={item?.id}
+                        category={item?.volumeInfo.authors?.[0]}
+                        author={item?.volumeInfo.categories?.[0]}
+                        imageSrc={item?.volumeInfo.imageLinks?.thumbnail}
+                        id={item?.id}
                     />
                 ))}
             </GridList>
+            {!isLoaded && <>Loading...</>}
+            {isLoaded && !(Object.values(books).length >= totalItems) && (
+                <button onClick={onClickHandler}>Load More</button>
+            )}
         </>
     );
 };

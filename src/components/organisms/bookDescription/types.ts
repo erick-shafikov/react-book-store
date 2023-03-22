@@ -1,6 +1,10 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export type TType = DetailedHTMLProps<
+export type TBookDescription = DetailedHTMLProps<
     HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
->;
+> & {
+    title: string;
+    author: string;
+    description: string;
+};

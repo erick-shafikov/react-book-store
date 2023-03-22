@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export type TSearchPanelProps = DetailedHTMLProps<
+export type TType = DetailedHTMLProps<
     HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
 >;

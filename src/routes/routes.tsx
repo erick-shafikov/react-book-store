@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Header } from '../components/layots/Header';
+import { MainLayout } from '../components/layots/MainLayout';
 import { BookPage } from '../components/pages/BookPage';
 import { MainPage } from '../components/pages/Main';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Header />,
+        element: <MainLayout />,
         children: [
             { path: '/', element: <MainPage /> },
-            { path: '/book', element: <BookPage /> },
+            { path: '/book/:id', element: <BookPage /> },
         ],
     },
 ]);

@@ -1,11 +1,15 @@
 import React from 'react';
 import { BookImageContainer, BookImg } from './styled';
-import temp from '../../../../public/boooktemp.png';
+import { TBookImageProps } from './types';
 
-export const BookImage = () => {
+export const BookImage = ({
+    width = '160px',
+    height = '240px',
+    src = '/boooktemp.png',
+}: TBookImageProps) => {
     return (
-        <BookImageContainer>
-            <BookImg src={temp} />
+        <BookImageContainer width={width} height={height}>
+            <BookImg src={src} width={width} height={height} />
         </BookImageContainer>
     );
 };
