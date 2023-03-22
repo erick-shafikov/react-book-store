@@ -1,12 +1,12 @@
 import { HeaderTitle } from '../../atoms/headerTitle';
-import { SearchBar } from '../../atoms/searchBar';
-import { Styled } from './styled';
+import { SearchBar } from '../searchBar';
+import { HeaderWrapper } from './styled';
 
 export const Header = () => {
     return (
-        <Styled>
+        <HeaderWrapper>
             <HeaderTitle headerText="Search for books" />
             <SearchBar />
-        </Styled>
+        </HeaderWrapper>
     );
 };

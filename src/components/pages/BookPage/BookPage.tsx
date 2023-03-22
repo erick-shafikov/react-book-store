@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../store';
 import {
     getBookLoadingSatus,
@@ -12,12 +12,10 @@ import { BookDescription } from '../../organisms/bookDescription';
 import { Styled } from './styled';
 
 export const BookPage = () => {
-    //унести в отдельный хук
     const { id } = useParams();
     const dispatch = useAppDispatch();
     const book = useAppSelector(getBookState);
     const loading = useAppSelector(getBookLoadingSatus);
-    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(
@@ -37,6 +35,7 @@ export const BookPage = () => {
                 title={book.volumeInfo?.title}
                 authors={book.volumeInfo?.authors}
                 description={book.volumeInfo?.description}
+                loading={loading}
             />
         </Styled>
     );

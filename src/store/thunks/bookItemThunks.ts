@@ -11,8 +11,10 @@ export const fetchBookItem = createAsyncThunk<
     //TODO Обработка ошибок
     try {
         const book = await fetchBook(link);
+
         return book;
     } catch (e) {
+        console.log(e);
         rejectWithValue(e as string);
     }
 });

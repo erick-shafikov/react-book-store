@@ -7,4 +7,5 @@ export type TBookDescription = DetailedHTMLProps<
     title: string;
     authors: Array<string>;
     description: string;
+    loading: boolean;
 };

@@ -2,6 +2,7 @@ export async function fetchBook(link: string) {
     try {
         const res = await fetch(link);
 
+        console.log('catch');
         if (res.status === 200) {
             const json = res.json();
 

@@ -7,7 +7,7 @@ import {
 } from '../../../store';
 import { NoBooks } from '../../atoms/noBooks';
 import { BookList } from '../../organisms/booklist';
-import { Styled } from './styled';
+import { Wrapper } from './styled';
 
 export const MainPage = () => {
     const books = useAppSelector(getBooksState);
@@ -16,7 +16,7 @@ export const MainPage = () => {
     const error = useAppSelector(getErrorState);
 
     return (
-        <Styled>
+        <Wrapper>
             {error ? (
                 <NoBooks />
             ) : (
@@ -26,6 +26,6 @@ export const MainPage = () => {
                     totalItems={totalItems}
                 />
             )}
-        </Styled>
+        </Wrapper>
     );
 };

@@ -12,7 +12,6 @@ export const initialFetchBooks = createAsyncThunk<
 >(
     'booklist/initialFetchBooks',
     async function (initialArguments, { rejectWithValue }) {
-        //TODO Обработка ошибок
         try {
             const books = await fetchData(initialArguments);
             const totalItmes = books.totalItems;

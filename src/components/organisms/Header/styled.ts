@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import img from '/background.jpg';
 
-export const Styled = styled.div`
+export const HeaderWrapper = styled.div`
     position: relative;
     min-height: 250px;
     background-size: cover;

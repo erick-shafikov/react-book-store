@@ -23,7 +23,7 @@ export const BookListItem = ({
 
     return (
         <BookListItemWrapper onClick={onCkickHandler}>
-            <BookImage src={imageSrc} />
+            <BookImage src={imageSrc} loading={false} />
             <StyledCategory>{category}</StyledCategory>
             <BookTitle>{boookTitle}</BookTitle>
             {authors &&

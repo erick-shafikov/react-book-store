@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Styled = styled.div`
+export const Wrapper = styled.div`
     width: 100%;
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
 `;

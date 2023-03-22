@@ -1,4 +1,3 @@
-import React from 'react';
 import { BookImageContainer, BookImg } from './styled';
 import { TBookImageProps } from './types';
 
