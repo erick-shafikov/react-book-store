@@ -7,6 +7,8 @@ export const Button = styled.button`
     color: #fff;
     font-size: x-large;
     border-style: none;
+    backface-visibility: hidden;
+
     transition-timing-function: ease-out;
 
     &:hover {

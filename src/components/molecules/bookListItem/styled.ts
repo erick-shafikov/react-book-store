@@ -8,6 +8,7 @@ export const BookListItemWrapper = styled.div`
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     border-radius: 3px;
+    overflow: hidden;
 
     &:hover {
         background-color: #e8e8e8;

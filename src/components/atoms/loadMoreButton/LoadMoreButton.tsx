@@ -3,5 +3,5 @@ import { Button } from './styled';
 import { TLoadMoreButton } from './types';
 
 export const LoadMoreButton = ({ onClick }: TLoadMoreButton) => {
-    return <Button onClick={onClick}>click to load More 🕮</Button>;
+    return <Button onClick={onClick}>click to load more 🕮</Button>;
 };
