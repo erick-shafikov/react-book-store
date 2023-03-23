@@ -1,9 +1,7 @@
 import { BOOK_CNT, DEFAULT_SEACRH_STRING } from '../constants.ts/searchParams';
 import { TQuery } from './types';
 
-const book_api_token = 'AIzaSyBMYIWUdKyZRgVFlZBTi--mx4gcdnFSb9M';
-
-console.log(import.meta.env.VITE_API_GOOGLE_TOKEN);
+const book_api_token = import.meta.env.VITE_API_GOOGLE_TOKEN;
 
 export function queryConstructor(params = {} as TQuery) {
     const {
