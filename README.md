@@ -2,3 +2,6 @@
 - Type script
 - React router dom
 - Styled components
+
+Приложение для просмотрп доступно по ссылке
+https://erick-shafikov-test-book-store.vercel.app/
